@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arne Domachofski - Professioneller Lebenslauf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 60px 50px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .header .title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .main-content {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            color: #3498db;
+        }
+
+        .profile-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .position {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .company {
+            font-size: 16px;
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .description {
+            color: #555;
+            margin-top: 12px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #3498db;
+        }
+
+        .skill-category h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 4px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .skill-list li::before {
+            content: "▪";
+            color: #3498db;
+            margin-right: 8px;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .cert-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .cert-details {
+            color: #555;
+            font-size: 14px;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; }
+            .header { background: #2c3e50; }
+        }
+
+        @media (max-width: 768px) {
+            .main-content { padding: 30px 25px; }
+            .header { padding: 40px 25px; }
+            .header h1 { font-size: 32px; }
+            .contact-bar { gap: 15px; }
+            .item-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Arne Domachofski</h1>
+            <div class="title">Küchenleitung</div>
+            <div class="subtitle">Seniorenheim "Haus Sonnenschein"</div>
+            
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    <span>+49 162 9622230</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <span>arnedomachofski@googlemail.com</span>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L3 9l7 7 7-7-7-7zM10 4.83L14.17 9 10 13.17 5.83 9 10 4.83z"/>
+                    </svg>
+                    <span>Verfügbar: Mo-Do 8:30-13:30</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                    </svg>
+                    Profil
+                </h2>
+                <div class="profile-text">
+                    Erfahrene Führungskraft in der Gemeinschaftsverpflegung mit über 35 Jahren Berufserfahrung in der Gastronomie und Küchenleitung. Spezialisiert auf die ernährungsphysiologischen Bedürfnisse älterer Menschen, Teamführung und Qualitätsmanagement in Senioreneinrichtungen. Fundierte Expertise in klassischer Küche, Großgastronomie und der besonderen Herausforderungen der Seniorenverpflegung. Langjährige Erfahrung in der Planung und Umsetzung ausgewogener Menükonzepte unter Berücksichtigung medizinischer Anforderungen und individueller Bedürfnisse.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h2zM8 5a1 1 0 011-1h2a1 1 0 011 1v1H8V5z"/>
+                    </svg>
+                    Berufserfahrung
+                </h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Küchenleitung</div>
+                            <div class="company">Pflegeheim "Haus Sonnenschein"</div>
+                        </div>
+                        <div class="period">2023 - heute</div>
+                    </div>
+                    <div class="description">
+                        Verantwortung für die komplette Küchenorganisation einer modernen Senioreneinrichtung. Personalführung, Menüplanung unter Berücksichtigung von Diätvorschriften, Budgetverantwortung und Lieferantenmanagement. Implementierung von HACCP-Richtlinien und kontinuierliche Qualitätssicherung.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Küchenleitung</div>
+                            <div class="company">Pflegeheim am Danewerk</div>
+                        </div>
+                        <div class="period">2018 - 2023</div>
+                    </div>
+                    <div class="description">
+                        Vollverantwortliche Küchenleitung in der Seniorenverpflegung. Entwicklung und Umsetzung von Ernährungskonzepten für pflegebedürftige Personen. Koordination aller küchenrelevanten Abläufe und Qualitätsstandards.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Küchenleitung</div>
+                            <div class="company">Zwei Pflegeheime (Doppelleitung)</div>
+                        </div>
+                        <div class="period">2014 - 2018</div>
+                    </div>
+                    <div class="description">
+                        Übergreifende Küchenleitung für zwei Pflegeeinrichtungen. Koordination der Menüplanung, Personalplanung und Warenwirtschaft für beide Standorte. Optimierung von Arbeitsabläufen und Kostenkontrolle.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Leitung Gastronomie</div>
+                            <div class="company">Freizeitpark "Tolk Schau"</div>
+                        </div>
+                        <div class="period">2010 - 2014</div>
+                    </div>
+                    <div class="description">
+                        Gesamtverantwortung für die Gastronomie eines großen Freizeitparks. Management mehrerer Gastronomiebereiche, Personalführung in der Saison, Eventgastronomie und Besucherverpflegung für bis zu 5.000 Gäste täglich.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Sous Chef / Küchenchef</div>
+                            <div class="company">Wiking-Turm Restaurant</div>
+                        </div>
+                        <div class="period">1995 - 2009</div>
+                    </div>
+                    <div class="description">
+                        Karriereentwicklung vom Sous Chef zum Küchenchef in einem renommierten Restaurant. Verantwortung für Menüentwicklung, Wareneinkauf, Personalführung und Qualitätssicherung. Aufbau und Leitung eines professionellen Küchenteams.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">1. Koch (Küchenleitung) / Truppführer</div>
+                            <div class="company">Bundeswehr</div>
+                        </div>
+                        <div class="period">1991 - 1995</div>
+                    </div>
+                    <div class="description">
+                        Verantwortung als 1. Koch und Truppführer für die Versorgung von 400 Soldaten in der Kaserne und bis zu 1.200 Soldaten bei Übungen und Manövern. Leitung des kompletten Küchentrupps, Organisation der Feldküche und Logistik. Mehrere Auszeichnungen für außergewöhnliche Leistungen. Zusätzliche Fortbildungen in Warenwirtschaft und Verwaltung.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Saucier / Gardemanger</div>
+                            <div class="company">Gasthof zum Hirschen</div>
+                        </div>
+                        <div class="period">1989 - 1991</div>
+                    </div>
+                    <div class="description">
+                        Spezialisierung auf Saucenküche und kalte Küche in einem traditionellen Gasthof. Vertiefung der handwerklichen Fertigkeiten und Erweiterung des kulinarischen Repertoires in der gehobenen Gastronomie.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Commis de Cuisine</div>
+                            <div class="company">Holiday Inn München Süd</div>
+                        </div>
+                        <div class="period">1988 - 1989</div>
+                    </div>
+                    <div class="description">
+                        Erste Berufserfahrung nach der Ausbildung in einem internationalen Hotelketten-Restaurant. Einarbeitung in die Hotelgastronomie und internationale Küche. Grundlagen der Großküchentechnik und Teamarbeit.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                    </svg>
+                    Ausbildung
+                </h2>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="position">Ausbildung zum Koch</div>
+                            <div class="company">Wiking-Turm Restaurant</div>
+                        </div>
+                        <div class="period">1985 - 1988</div>
+                    </div>
+                    <div class="description">
+                        Fundierte Kochausbildung in einem renommierten Restaurant mit Schwerpunkt auf klassische und moderne Küchentechniken. Umfassende Ausbildung in Lebensmittelhygiene, Warenkunde und den Grundlagen der Betriebswirtschaft.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    Weiterbildungen & Zertifikate
+                </h2>
+
+                <div class="certifications">
+                    <div class="cert-item">
+                        <div class="cert-title">Praxisanleiter / Ausbilder IHK</div>
+                        <div class="cert-details">Qualifikation zur Ausbildung von Nachwuchskräften<br>IHK-zertifiziert 2015</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Warenwirtschaft & Verwaltung</div>
+                        <div class="cert-details">Fortbildung während Bundeswehrzeit<br>Abgeschlossen 1991-1995</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">HACCP-Schulung</div>
+                        <div class="cert-details">Hygieneschulung für Führungskräfte<br>Zertifiziert 2023</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Ernährung im Alter</div>
+                        <div class="cert-details">Spezialschulung für Seniorenverpflegung<br>IHK-zertifiziert 2022</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Personalführung</div>
+                        <div class="cert-details">Führungskräftetraining<br>Abgeschlossen 2021</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-title">Auszeichnungen Bundeswehr</div>
+                        <div class="cert-details">Mehrere Auszeichnungen für außergewöhnliche Leistungen<br>1991-1995</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg class="section-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z"/>
+                    </svg>
+                    Kernkompetenzen
+                </h2>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Küchenmanagement</h4>
+                        <ul class="skill-list">
+                            <li>Menüplanung & Kalkultion</li>
+                            <li>Großküchentechnik</li>
+                            <li>Wareneinkauf & Lagerhaltung</li>
+                            <li>Qualitätskontrolle</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Personalführung</h4>
+                        <ul class="skill-list">
+                            <li>Teamleitung (8 Mitarbeiter)</li>
+                            <li>Dienstplangestaltung</li>
+                            <li>Mitarbeiterentwicklung</li>
+                            <li>Konfliktmanagement</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Spezialisierung</h4>
+                        <ul class="skill-list">
+                            <li>Seniorenverpflegung</li>
+                            <li>Diätetische Küche</li>
+                            <li>Allergenkennzeichnung</li>
+                            <li>Ernährungsberatung</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Qualitätsmanagement</h4>
+                        <ul class="skill-list">
+                            <li>HACCP-Konzepte</li>
+                            <li>Hygienestandards</li>
+                            <li>Dokumentation</li>
+                            <li>Audits & Kontrollen</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
